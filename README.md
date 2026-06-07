@@ -3,9 +3,11 @@
 [![Language - Rust](https://img.shields.io/badge/Language-Rust-orange?logo=rust&style=flat-square)](https://www.rust-lang.org/)
 [![Backend - Axum](https://img.shields.io/badge/Backend-Axum-blue?style=flat-square)](https://github.com/tokio-rs/axum)
 [![AI-Driven - Antigravity](https://img.shields.io/badge/AI--Driven-Antigravity%20AI-blueviolet?style=flat-square)](https://github.com/google-deepmind)
-[![License - MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![License - AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue?style=flat-square)](LICENSE)
 
 An advanced, interactive spatial anomaly detector built to explore the relationships between intention, probability, and geographic coordinates. Drawing inspiration from quantum random coordinate generators (Randonautics), it uses continuous mathematical density algorithms to pinpoint local entropy clusters (Attractors) and void fields.
+
+This application is designed to run entirely locally as an independent desktop server, ensuring complete privacy, zero hosting costs, and fast query execution.
 
 > [!NOTE]
 > **🤖 AI-Driven Project**
@@ -30,7 +32,9 @@ An advanced, interactive spatial anomaly detector built to explore the relations
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started (Local Run)
+
+The application is built for local usage. The Axum web server automatically serves the interactive map interface in the browser.
 
 ### Prerequisites
 
@@ -57,7 +61,7 @@ If you don't have it, install it via [rustup.rs](https://rustup.rs/).
 
 We have included a multi-threaded stress-test benchmark binary to measure latency and scalability under load.
 
-To run the benchmarks:
+To run the benchmarks locally:
 ```bash
 cargo run --release --bin bench
 ```
@@ -73,7 +77,9 @@ cargo run --release --bin bench
 
 ---
 
-## 🐳 Docker Deployment
+## 🐳 Containerized Run & Optional Cloud Deployment
+
+### Local Docker execution
 
 The project contains a multi-stage Dockerfile that builds the Rust binary in a lightweight build environment and targets a minimal `debian-slim` production image (~30MB).
 
@@ -81,21 +87,20 @@ The project contains a multi-stage Dockerfile that builds the Rust binary in a l
     ```bash
     docker build -t randonautics .
     ```
-2.  **Run the Container**:
+2.  **Run the Container Locally**:
     ```bash
     docker run -d -p 3500:3500 -e PORT=3500 --name randonautics-app randonautics
     ```
 
-### Public Deployment (Render or Fly.io)
+### Public Deployment (Optional)
 
-Since the application binds to the dynamic `PORT` environment variable, it is fully compatible with Fly.io or Render out-of-the-box:
+Since the application binds to the dynamic `PORT` environment variable, it is compatible with cloud platforms like Fly.io or Render:
 
-```bash
-# Deploy to Fly.io
-fly launch
-```
-
-Deploy your static frontend to **GitHub Pages** and point it to your deployed Fly.io instance URL by modifying `API_BASE_URL` inside [frontend/index.html](frontend/index.html).
+*   **Fly.io Deployment**:
+    ```bash
+    fly launch
+    ```
+*   **Split-hosting**: Deploy your static frontend to **GitHub Pages** and point it to your deployed backend URL by modifying `API_BASE_URL` inside [frontend/index.html](frontend/index.html).
 
 ---
 
@@ -109,4 +114,4 @@ Deploy your static frontend to **GitHub Pages** and point it to your deployed Fl
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU Affero General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
