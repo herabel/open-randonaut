@@ -2,7 +2,7 @@
 // This file contains several statistical tests that probe different aspects of the
 // randomness produced by `generate_random_bytes`. All tests run as `cargo test`.
 
-use randonautics::entropy::generate_random_bytes;
+use open_randonaut::entropy::generate_random_bytes;
 use statrs::distribution::{ChiSquared, ContinuousCDF};
 
 

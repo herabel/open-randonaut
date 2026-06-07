@@ -14,7 +14,7 @@ COPY src ./src
 COPY frontend ./frontend
 
 # Compile the production binary
-RUN cargo build --release --bin randonautics
+RUN cargo build --release --bin open-randonaut
 
 # Stage 2: Run the binary in a clean minimal image
 FROM debian:bookworm-slim
@@ -22,10 +22,10 @@ FROM debian:bookworm-slim
 WORKDIR /app
 
 # Copy the compiled binary
-COPY --from=builder /usr/src/app/target/release/randonautics /app/randonautics
+COPY --from=builder /usr/src/app/target/release/open-randonaut /app/open-randonaut
 
 # Expose default port (overridden by PORT environment variable in production)
 EXPOSE 3500
 
 # Execute the server
-CMD ["/app/randonautics"]
+CMD ["/app/open-randonaut"]

@@ -488,6 +488,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50"
 
 [[package]]
+name = "open-randonaut"
+version = "0.1.0"
+dependencies = [
+ "argon2",
+ "axum",
+ "getrandom 0.3.4",
+ "serde",
+ "serde_json",
+ "statrs",
+ "tiny-keccak",
+ "tokio",
+ "tower-http",
+]
+
+[[package]]
 name = "parking_lot"
 version = "0.12.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -610,21 +625,6 @@ checksum = "32cb0b9bc82b0a0876c2dd994a7e7a2683d3e7390ca40e6886785ef0c7e3ee31"
 dependencies = [
  "num-traits",
  "rand",
-]
-
-[[package]]
-name = "randonautics"
-version = "0.1.0"
-dependencies = [
- "argon2",
- "axum",
- "getrandom 0.3.4",
- "serde",
- "serde_json",
- "statrs",
- "tiny-keccak",
- "tokio",
- "tower-http",
 ]
 
 [[package]]

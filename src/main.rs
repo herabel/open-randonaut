@@ -19,7 +19,7 @@ async fn main() {
         .unwrap_or(3500);
     let addr = format!("0.0.0.0:{}", port);
 
-    println!("🌀 Рандонавтика запущена → Слушает на: {}", addr);
+    println!("🌀 Open Randonaut запущен → Слушает на: {}", addr);
     println!("🌐 Доступна локально: http://localhost:{}", port);
 
     let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
@@ -31,8 +31,8 @@ async fn serve_index() -> Html<&'static str> {
 }
 
 async fn api_generate(
-    Json(req): Json<randonautics::randonautics::SessionRequest>,
-) -> Json<randonautics::randonautics::SessionResult> {
-    let result = randonautics::randonautics::generate_session(&req);
+    Json(req): Json<open_randonaut::open_randonaut::SessionRequest>,
+) -> Json<open_randonaut::open_randonaut::SessionResult> {
+    let result = open_randonaut::open_randonaut::generate_session(&req);
     Json(result)
 }

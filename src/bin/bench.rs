@@ -1,4 +1,4 @@
-use randonautics::randonautics::{generate_session, SessionRequest};
+use open_randonaut::open_randonaut::{generate_session, SessionRequest};
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::Arc;
 use std::thread;
@@ -28,7 +28,7 @@ fn print_latency_stats(latencies: &mut [Duration]) {
 }
 
 fn main() {
-    println!("🚀 Запуск расширенного бенчмарка Рандонавтики");
+    println!("🚀 Запуск расширенного бенчмарка Open Randonaut");
     println!("Оборудование: Многопоточный стресс-тест & Замеры масштабируемости");
 
     let num_threads = thread::available_parallelism()

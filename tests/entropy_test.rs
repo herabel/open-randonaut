@@ -5,7 +5,7 @@
 // A p‑value > 0.01 indicates that the observed distribution does not
 // significantly deviate from uniform at the 99 % confidence level.
 
-use randonautics::entropy::generate_random_bytes;
+use open_randonaut::entropy::generate_random_bytes;
 use statrs::distribution::{ChiSquared, ContinuousCDF};
 
 #[test]

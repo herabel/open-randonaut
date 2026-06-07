@@ -16,7 +16,7 @@
 //! an additional executable target.
 
 use std::env;
-use randonautics::entropy::generate_random_bytes;
+use open_randonaut::entropy::generate_random_bytes;
 use statrs::distribution::{ChiSquared, ContinuousCDF};
 
 
