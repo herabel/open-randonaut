@@ -1,0 +1,17 @@
+[package]
+name = "randonautics"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+getrandom = "0.3"
+tiny-keccak = { version = "2.0", features = ["shake"] }
+argon2 = "0.5"
+tokio = { version = "1", features = ["full"] }
+axum = { version = "0.8", features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tower-http = { version = "0.6", features = ["cors"] }
+statrs = "0.16"
+[dev-dependencies]
+statrs = "0.16"
