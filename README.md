@@ -1,11 +1,11 @@
-# 🌀 Randonautics (Quantum Anomaly Explorer)
+# 🌀 Open Randonaut (Quantum Anomaly Explorer)
 
 [![Language - Rust](https://img.shields.io/badge/Language-Rust-orange?logo=rust&style=flat-square)](https://www.rust-lang.org/)
 [![Backend - Axum](https://img.shields.io/badge/Backend-Axum-blue?style=flat-square)](https://github.com/tokio-rs/axum)
 [![AI-Driven - Antigravity](https://img.shields.io/badge/AI--Driven-Antigravity%20AI-blueviolet?style=flat-square)](https://github.com/google-deepmind)
 [![License - AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue?style=flat-square)](LICENSE)
 
-An advanced, interactive spatial anomaly detector built to explore the relationships between intention, probability, and geographic coordinates. Drawing inspiration from quantum random coordinate generators (Randonautics), it uses continuous mathematical density algorithms to pinpoint local entropy clusters (Attractors) and void fields.
+An advanced, interactive spatial anomaly detector built to explore the relationships between intention, probability, and geographic coordinates. Drawing inspiration from quantum random coordinate generators (like Randonauts), it uses continuous mathematical density algorithms to pinpoint local entropy clusters (Attractors) and void fields.
 
 This application is designed to run entirely locally as an independent desktop server, ensuring complete privacy, zero hosting costs, and fast query execution.
 
@@ -21,7 +21,7 @@ This application is designed to run entirely locally as an independent desktop s
     *   **Attractors**: High-density point clusters representing coordinate hotspots.
     *   **Voids**: Low-density areas representing spatial blind spots.
     *   **Power Spot (Blind Spot)**: The single coordinate representing the maximum absolute Z-score anomaly.
-*   **Continuous Density Estimation (KDE)**: Replaced discrete grid boundaries with a continuous **Gaussian Kernel Density Estimation (KDE)** model ($\sigma = \text{cell\_size\_m}$), eliminating z-score discretization artifacts.
+*   **Continuous Density Estimation (KDE)**: Replaced discrete grid boundaries with a continuous **Gaussian Kernel Density Estimation (KDE)** model (`sigma = cell_size_m`), eliminating z-score discretization artifacts.
 *   **Centroid Localization**: Coordinates are computed as the center-of-mass (centroid) of clusters, eliminating artificial grid patterns and alignment snapping on the map.
 *   **Water Exclusion Filtering**: Uses the global high-resolution (30m pixel) satellite-based ASTER database (`is-on-water` API) on the client side to check and filter coordinates falling in oceans, lakes, or wide rivers.
 *   **Mind-Machine Intent Bias**: Integrates a cryptographic Argon2id key derivation function (KDF) to stretch user intention strings, mapping human consciousness queries onto quantum coordinate density pulls.
@@ -45,12 +45,12 @@ If you don't have it, install it via [rustup.rs](https://rustup.rs/).
 
 1.  Clone this repository:
     ```bash
-    git clone https://github.com/herabel/randonautics.git
-    cd randonautics
+    git clone https://github.com/herabel/open-randonaut.git
+    cd open-randonaut
     ```
 2.  Start the Axum web server in release mode:
     ```bash
-    cargo run --release --bin randonautics
+    cargo run --release --bin open-randonaut
     ```
 3.  Open your browser and navigate to:
     [http://localhost:3500](http://localhost:3500)
@@ -85,11 +85,11 @@ The project contains a multi-stage Dockerfile that builds the Rust binary in a l
 
 1.  **Build the Docker Image**:
     ```bash
-    docker build -t randonautics .
+    docker build -t open-randonaut .
     ```
-2.  **Run the Container Locally**:
+2.  Run the Container Locally:
     ```bash
-    docker run -d -p 3500:3500 -e PORT=3500 --name randonautics-app randonautics
+    docker run -d -p 3500:3500 -e PORT=3500 --name open-randonaut-app open-randonaut
     ```
 
 ### Public Deployment (Optional)
